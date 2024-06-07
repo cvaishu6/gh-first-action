@@ -1,4 +1,17 @@
-...
-run: |
-    echo "First output"
-    echo "Second output"
+name: Multi-line Shell Commands
+
+on: workflow_dispatch
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run multi-line shell commands
+      run: |
+        echo "This is a multi-line"
+        echo "shell command"
+        ls -l
